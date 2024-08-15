@@ -1,0 +1,53 @@
+package br.com.alurafood.pagamentos.service;
+
+import java.awt.print.Pageable;
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.alurafood.pagamentos.dto.PagamentoDto;
+import br.com.alurafood.pagamentos.model.Pagamento;
+import br.com.alurafood.pagamentos.repository.PagamentoRepository;
+import ch.qos.logback.core.status.Status;
+import jakarta.persistence.EntityNotFoundException;
+
+@Service
+public class PagamentoService {
+
+	@Autowired
+	private PagamentoRepository repository;
+	
+	@Autowired
+	private ModelMapper modelMapper;
+
+	public List<Pagamento> obterTodos() {
+		return repository.findAll();
+	}
+
+	public PagamentoDto obterPorId(Long id) {
+		Pagamento pagamento = repository.findById(id).orElseThrow(() -> new EntityNotFoundException());
+
+		return modelMapper.map(pagamento, PagamentoDto.class);
+	}
+
+	public PagamentoDto criarPagamento(PagamentoDto dto) {
+		Pagamento pagamento = modelMapper.map(dto, Pagamento.class);
+		pagamento.setStatus(Status.);
+		repository.save(pagamento);
+
+		return modelMapper.map(pagamento, PagamentoDto.class);
+	}
+
+	public PagamentoDto atualizarPagamento(Long id, PagamentoDto dto) {
+		Pagamento pagamento = modelMapper.map(dto, Pagamento.class);
+		pagamento.setId(id);
+		pagamento = repository.save(pagamento);
+		return modelMapper.map(pagamento, PagamentoDto.class);
+	}
+
+	public void excluirPagamento(Long id) {
+		repository.deleteById(id);
+	}
+}

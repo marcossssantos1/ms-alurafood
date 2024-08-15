@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;pagamentos/src/main/resources/db/migration/V1__criar_tabela_pagamentos&apos; to &apos;V1__criar_tabela_pagamentos.sql&apos;" description="Rename resource &apos;V1__criar_tabela_pagamentos&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/db/migration/V1__criar_tabela_pagamentos" name="V1__criar_tabela_pagamentos.sql" stamp="1723488547840" updateReferences="true"/>
+</session>
