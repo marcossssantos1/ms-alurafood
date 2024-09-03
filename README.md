@@ -2,6 +2,7 @@ microservices-spring-alurafood
 Este é um projeto de exemplo de um sistema de pedidos de comida, implementado com arquitetura de microservices, utilizando Spring Cloud e Docker. O projeto foi desenvolvido como parte do curso Microservices with Spring Cloud oferecido pela Alura.
 
 Tecnologias Utilizadas
+
 O projeto utiliza as seguintes tecnologias e frameworks:
 
 Java Version Spring Boot Version
