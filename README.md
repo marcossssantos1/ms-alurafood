@@ -12,6 +12,7 @@ Resilience4j Version
 Docker Version Docker Compose Version
 MySql Version Flyway Version
 Arquitetura de Microservices
+
 O projeto utiliza a arquitetura de microservices, com os seguintes serviços:
 
 server: servidor de descoberta de serviços, para que os serviços possam se comunicar entre si
@@ -29,6 +30,7 @@ Discovery Server - Eureka: http://localhost:8761
 Gateway: http://localhost:8082
 Pagamentos: http://localhost:8082/pagamentos-ms/pagamentos
 Pedidos: http://localhost:8082/pedidos-ms/pedidos
+
 Postman Collection
 A coleção alurafood na raíz do projeto contém as seguintes requisições:
 
